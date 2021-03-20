@@ -2,7 +2,7 @@
 세값의 최소값을 구하는 min3 메서드를 작성하세요.
 fun min3(a: Int, b: Int, c: Int): Int
  */
-package chap01
+package chap01.section1
 
 fun min3(a: Int, b: Int, c: Int): Int {
     var min = a

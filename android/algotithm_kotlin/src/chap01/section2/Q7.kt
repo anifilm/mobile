@@ -9,10 +9,10 @@ fun main() {
     print("n의 값: ")
     val n: Int = readLine()!!.toInt()
 
-    var sum = 0     // 합
+    var sum = 0  // 합
 
-    for (i in 1..n) {   // i = 1, 2, ..., n
-        sum += i    // sum에 i를 더합니다.
+    for (i in 1..n) {  // i = 1, 2, ..., n
+        sum += i  // sum에 i를 더합니다.
 
         if (n == 7)
             if (i < 7)

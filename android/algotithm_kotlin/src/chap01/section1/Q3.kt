@@ -2,7 +2,7 @@
 네값의 최소값을 구하는 min4 메서드를 작성하세요.
 fun min4(a: Int, b: Int, c: Int, d: Int): Int
  */
-package chap01
+package chap01.section1
 
 fun min4(a: Int, b: Int, c: Int, d: Int): Int {
     var min = a

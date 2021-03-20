@@ -1,4 +1,4 @@
-package chap01
+package chap01.section1
 
 fun main() {
     print("정수를 입력하세요: ")
