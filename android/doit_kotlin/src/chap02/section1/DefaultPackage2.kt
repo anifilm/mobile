@@ -1,6 +1,6 @@
 // 수학 라이브러리 추가하기
 package chap02.section1
-import java.lang.Math.*
+import kotlin.math.*
 
 fun main() {
     val intro: String = "안녕하세요!"

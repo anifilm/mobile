@@ -1,3 +1,4 @@
+// 자바에서의 varargs 사용 예
 package chap03.section1.extras;
 
 public class VarargsTest {
@@ -5,8 +6,8 @@ public class VarargsTest {
         varargsParam(1, 2, 3, 4);
     }
 
-    public static void varargsParam(int... ts){
-        for(int t: ts){
+    public static void varargsParam(int... ts) {
+        for (int t : ts) {
             System.out.println(t);
         }
     }

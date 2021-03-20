@@ -3,7 +3,7 @@ package chap02.section1
 import com.example.edu.Person
 
 fun main() {
-    val user = Person("Chaeyoung", 43)
+    val user = Person("Chaeyoung", 44)
 
     println(user.name)
     println(user.age)

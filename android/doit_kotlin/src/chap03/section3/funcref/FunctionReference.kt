@@ -7,7 +7,7 @@ fun main() {
     println(res1)
 
     // 인자가 없는 함수
-    hello(::text)   // 반환값 없음
+    hello(::text)  // 반환값 없음
 
     // 일반 변수에 값처럼 할당
     val liskLambda = ::sum

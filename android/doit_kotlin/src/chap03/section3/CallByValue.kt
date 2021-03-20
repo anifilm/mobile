@@ -2,7 +2,7 @@
 package chap03.section3
 
 fun main() {
-    val result = callByValue(lambda())  // 람다식 함수를 호출
+    val result = callByValue(lambda())  // lambda() -> 람다식 함수 먼저 호출 -> callByValue() 함수 호출
     println(result)
 }
 
@@ -11,7 +11,7 @@ fun callByValue(b: Boolean): Boolean {  // 일반 변수 자료형으로 선언�
     return b
 }
 
-val lambda: () -> Boolean = {   // 람다 표현식이 2중
+val lambda: () -> Boolean = {  // 람다 표현식이 2줄
     println("lambda function")
-    true  // 마지막 표현식 문장의 결과가 반환
+    true  // 마지막 표현식 문장의 값을 반환
 }

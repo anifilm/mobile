@@ -9,3 +9,10 @@ fun main() {
 
 // 매개변수가 없는 람다식이 noParam 함수의 매개변수 out으로 지정됨
 fun noParam(out: () -> String) = println(out())
+
+/*
+
+out: () -> String = { "Hello World!" }
+println(out())
+
+ */

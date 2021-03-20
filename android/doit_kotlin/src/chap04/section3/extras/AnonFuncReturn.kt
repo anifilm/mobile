@@ -4,7 +4,7 @@ fun main() {
     retFunc()
 }
 
-fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) { // inline이 제거됨
+fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) {  // inline이 제거됨
     out(a, b)
 }
 

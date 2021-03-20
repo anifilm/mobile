@@ -5,7 +5,7 @@ fun main() {
     val source = "Hello World!"
     val target = "Kotlin"
     println(source.getLongString(target))
-    // "Hello World!".getLongString("Kotlin") 형태로 작성 가능
+//  "Hello World!".getLongString("Kotlin") 형태로 사용 가능
 
 }
 

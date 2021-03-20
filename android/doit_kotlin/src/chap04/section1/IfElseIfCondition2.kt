@@ -9,9 +9,11 @@ fun main() {
     // 범위 지정자로 연결된 조건
     if (score >= 90.0) {
         grade = 'A'
-    } else if (score in 80.0..89.9) {
+    }
+    else if (score in 80.0..89.9) {
         grade = 'B'
-    } else if (score in 70.0..79.9) {
+    }
+    else if (score in 70.0..79.9) {
         grade = 'C'
     }
 

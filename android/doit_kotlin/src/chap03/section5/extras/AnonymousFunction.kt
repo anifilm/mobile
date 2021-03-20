@@ -8,7 +8,7 @@ fun main() {
 //  val add = fun(x: Int, y: Int) = x + y
 
     // (3) 람다식 함수
-//  val add = {x: Int, y: Int -> x + y }
+//  val add = { x: Int, y: Int -> x + y }
 
     // 1 ~ 3 모두 동일한 결과
     val result = add(10, 2)

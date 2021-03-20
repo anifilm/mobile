@@ -16,3 +16,16 @@ fun main() {
     x = 64
     println("x shr 4 -> ${x / 4}, ${x shr 2}")   //  16, 16
 }
+
+/*
+
+ Java     Kotlin
+  <<       shl
+  >>       shr
+  >>>      ushr
+   &       and
+   |       or
+   ^       xor
+   ~       inv
+
+ */
