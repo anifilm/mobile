@@ -17,7 +17,7 @@ class Bird(var name: String = "NONAME", var wing: Int = 2, var beak: String, var
 
 fun main() {
 //  val coco = Bird("mybird", 2, "short", "blue")
-    val coco = Bird(beak = "long", color = "red")   // 기본값이 있는 것은 생략하고 없는 것만 전달 가능
+    val coco = Bird(beak = "long", color = "red")  // 기본값이 있는 것은 생략하고 없는 것만 전달 가능
 
     println("coco.name: ${coco.name}, coco.wing ${coco.wing}")
     println("coco.color: ${coco.color}, coco.beak ${coco.beak}")

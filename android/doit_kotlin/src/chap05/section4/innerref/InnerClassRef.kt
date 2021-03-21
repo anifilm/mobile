@@ -13,10 +13,10 @@ class Child : Base() {
     inner class Inside {
         fun f() = println("Inside Class f()")
         fun test() {
-            f() // 현재 이너 클래스의 f() 접근
-            Child().f() // 바로 바깥 클래스 f() 접근
-            super@Child.f() // Child의 상위 클래스인 Base 클래스의 f() 접근
-            println("[Inside] super@Child.x: ${super@Child.x}") // Base의 x 접근
+            f()  // 현재 이너 클래스의 f() 접근
+            Child().f()  // 바로 바깥 클래스 f() 접근
+            super@Child.f()  // Child의 상위 클래스인 Base 클래스의 f() 접근
+            println("[Inside] super@Child.x: ${super@Child.x}")  // Base의 x 접근
         }
     }
 }

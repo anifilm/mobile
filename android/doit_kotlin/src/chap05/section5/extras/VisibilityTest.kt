@@ -8,10 +8,10 @@ open class Base {
     val d = 4  // 가시성 지시자 기본값은 public
 
     protected class Nested {
-        public val e: Int = 5 // public 생략 가능
+        public val e: Int = 5  // public 생략 가능
         private val f: Int = 6
         fun test() {
-            println(Base().a) // protected 에서는 private 멤버 a도 접근 가능
+            println(Base().a)  // protected 에서는 private 멤버 a도 접근 가능
             println(Base().b)
             println(Base().c)
             println(Base().d)
@@ -33,15 +33,15 @@ class Derived : Base() {
     // a 는 접근 불가
     // b, c, d 는 여기서 접근 가능
     // Nested 클래스의 e도 접근 가능
-    override val b = 5      // Base의 'b' 는 오버라이딩 됨
+    override val b = 5    // Base의 'b' 는 오버라이딩 됨
     fun test(base: Base) {
-    //  println(base.a)     // private으로 접근 불가
-        println(super.b)    // 파생 클래스에서 상위 클래스의 b 접근
+    //  println(base.a)   // private으로 접근 불가
+        println(super.b)  // 파생 클래스에서 상위 클래스의 b 접근
         println(b)
         println(base.c)
         println(base.d)
         println(Nested().e)
-    //  println(Nested().f) // private으로 접근 불가
+    //  println(Nested().f)  // private으로 접근 불가
     }
 }
 class Other(base: Base) {

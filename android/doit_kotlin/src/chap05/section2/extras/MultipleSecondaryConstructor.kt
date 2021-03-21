@@ -1,5 +1,5 @@
 // 주 생성자가 없고 여러개의 보조 생성자를 가진 클래스
-package chap05.section2.multiple
+package chap05.section2.extras
 
 class Bird {
     // 프로퍼티들

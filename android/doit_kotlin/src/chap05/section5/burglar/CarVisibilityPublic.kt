@@ -3,7 +3,7 @@ package chap05.section5.burglar
 
 open class Car protected constructor(_year: Int, _model: String, _power: String, _wheel: String) {
     private var year: Int = _year
-    public var model: String = _model   // public 은 기본값이므로 생략 가능
+    public var model: String = _model  // public 은 기본값이므로 생략 가능
     protected open var power: String = _power
     internal var wheel: String = _wheel
 
@@ -35,15 +35,15 @@ class Tico(_year: Int, _model: String, _power: String, _wheel: String,
     fun access(password: String) {
         if (password == "gotico") {
             println("----[Tico] access()---------")
-        //  super.year      // private 접근 불가
-            println("super.model = ${super.model}") // public
-            println("super.power = ${super.power}") // protected
-            println("super.wheel = ${super.wheel}") // internal
-            super.start(key) // protected
+        //  super.year  // private 접근 불가
+            println("super.model = ${super.model}")  // public
+            println("super.power = ${super.power}")  // protected
+            println("super.wheel = ${super.wheel}")  // internal
+            super.start(key)  // protected
 
-        //  driver.name     // private 접근 불가
-            println("Driver().license = ${driver.license}") // public
-            driver.driving() // internal
+        //  driver.name  // private 접근 불가
+            println("Driver().license = ${driver.license}")  // public
+            driver.driving()  // internal
         } else {
             println("You're a burglar")
         }
