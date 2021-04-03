@@ -1,6 +1,10 @@
+.DS_Store
+.vscode
 node_modules
 dist
 .idea
+out
+target
 __using_assets__
 __new__
 *.exe
