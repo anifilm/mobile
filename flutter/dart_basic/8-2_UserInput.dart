@@ -1,11 +1,10 @@
-import 'dart:math';
 import 'dart:io';
 
 void main() {
   stdout.write('Enter first number: ');
-  int num1 = int.tryParse(stdin.readLineSync() ?? 0);
+  String num1 = stdin.readLineSync().toString();
   stdout.write('Enter second number: ');
-  int num2 = int.tryParse(stdin.readLineSync() ?? 0);
+  String num2 = stdin.readLineSync().toString();
 
-  print(num1 + num2);
+  print(int.parse(num1) + int.parse(num2));
 }
