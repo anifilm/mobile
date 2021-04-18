@@ -10,7 +10,7 @@ void main() {
 }
 
 void addItem(e) {
-  var newTask = new LIElement();
+  var newTask = LIElement();
   newTask.text = task.value;
   task.value = '';
   list.children.add(newTask);
