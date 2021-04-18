@@ -4,6 +4,10 @@ int rabbitCount = 0;
 const int NO_YEARS = 10;
 const int GROWTH_FACTOR = 15;
 
+int calculateRabbits(int years) {
+  return (2 * pow(e, log(GROWTH_FACTOR) * years)).round().toInt();
+}
+
 void main() {
   print("The number of rabbits increases as:\n");
 
@@ -11,8 +15,4 @@ void main() {
     rabbitCount = calculateRabbits(years);
     print("After $years years:\t $rabbitCount animals");
   }
-}
-
-int calculateRabbits(int years) {
-  return (2 * pow(e, log(GROWTH_FACTOR) * years)).round().toInt();
 }

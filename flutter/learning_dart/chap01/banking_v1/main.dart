@@ -1,8 +1,10 @@
 class BankAccount {
   String owner, number;
   double balance;
+
   // constructor
   BankAccount(this.owner, this.number, this.balance);
+
   /* methods
   deposit(double amount) {
     balance += amount;
