@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import Constants from 'expo-constants';
 import _ from 'lodash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import produce from 'immer';
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -36,20 +37,35 @@ const Input = styled.TextInput`
   flex: 1;
 `;
 const Button = styled.Button``;
-const TempText = styled.Text`
+const Check = styled.TouchableOpacity`
+  margin-right: 4px;
+`;
+const CheckIcon = styled.Text`
   font-size: 20px;
-  margin-bottom: 12px;
 `;
 
 export default function App() {
-  const [list, setList] = React.useState([
-    { id: '1', todo: '할 일 1' },
-    { id: '2', todo: '할 일 2' },
-    { id: '3', todo: '할 일 3' },
-    { id: '4', todo: '할 일 4' },
-  ]);
+  const [list, setList] = React.useState([]);
   const [inputTodo, setInputTodo] = React.useState('');
   // 리턴은 컴포넌트, 컴포넌트로 이루어진 배열
+
+  React.useEffect(() => {
+    AsyncStorage.getItem('list')
+      .then((data) => {
+        if (data !== null) {
+          setList(JSON.parse(data));
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }, []);
+
+  const store = (newList) => {
+    setList(newList);
+    AsyncStorage.setItem('list', JSON.stringify(newList));
+  };
+
   return (
     <Container>
       <KeyboardAvoidingView
@@ -59,12 +75,24 @@ export default function App() {
           {list.map((item) => {
             return (
               <TodoItem key={item.id}>
+                <Check
+                  onPress={() => {
+                    store(
+                      produce(list, (draft) => {
+                        const index = list.indexOf(item);
+                        draft[index].done = !list[index].done;
+                      }),
+                    );
+                  }}
+                >
+                  <CheckIcon>{item.done ? '☑️' : '☐'}</CheckIcon>
+                </Check>
                 <TodoItemText>{item.todo}</TodoItemText>
                 <TodoItemButton
                   title="삭제"
                   onPress={() => {
                     //alert(item.id);
-                    setList(_.reject(list, element => element.id === item.id));
+                    store(_.reject(list, (element) => element.id === item.id));
                   }}
                 />
               </TodoItem>
@@ -87,8 +115,9 @@ export default function App() {
               const newItem = {
                 id: new Date().getTime().toString(),
                 todo: inputTodo,
+                done: false,
               };
-              setList([
+              store([
                 ...list, // 전개 연산자 Spread Operator
                 newItem,
               ]);
