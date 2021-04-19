@@ -4,6 +4,7 @@ import { StyleSheet, Platform } from 'react-native';
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
 import _ from 'lodash';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Container = styled.SafeAreaView`
   flex: 1;
