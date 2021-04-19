@@ -7,7 +7,7 @@ class Num {
 
 void main() {
   var n = Num();
-  int number;
+  int? number;
 
   /*
   if (n != null) {

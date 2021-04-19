@@ -1,4 +1,4 @@
 void main() {
-  int num;
+  int? num;
   print(num);
 }

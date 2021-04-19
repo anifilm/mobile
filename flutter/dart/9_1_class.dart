@@ -1,8 +1,8 @@
 // Class
 
 class Person {
-  String name;
-  int age;
+  String? name;
+  int? age;
 
   // Show Method
   void showOuput() {

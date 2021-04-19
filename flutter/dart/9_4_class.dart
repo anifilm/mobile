@@ -1,8 +1,8 @@
 // Class
 
 class Person {
-  String name;
-  int age;
+  String? name;
+  int? age;
 
   // Default Constructor
   Person(this.name, [this.age = 0]);

@@ -2,7 +2,7 @@
 // (?.), (??), (??=)
 
 void main() {
-  int number;
+  int? number;
 
   /*
   if (number == null) {
