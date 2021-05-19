@@ -1,4 +1,4 @@
-// 코드 4-3 튜플 기본
+// 코드 4-3 Tuple 기본
 
 // String, Int, Double 타입을 갖는 튜플
 var person: (String, Int, Double) = ("anifilm", 100, 172.5)

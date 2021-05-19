@@ -1,4 +1,4 @@
-// 코드 4-5 튜플 별칭 지정
+// 코드 4-5 Tuple 별칭 지정
 typealias PersonTuple = (name: String, age: Int, height: Double)
 
 let yagom: PersonTuple = ("yagom", 100, 178.5)

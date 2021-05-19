@@ -1,4 +1,4 @@
-// 코드 4-7 배열의 사용
+// 코드 4-7 Array의 사용
 
 var names: [String] = ["yagom", "chulsoo", "younghee", "yagom"]
 
