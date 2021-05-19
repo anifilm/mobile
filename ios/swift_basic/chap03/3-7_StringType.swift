@@ -1,4 +1,4 @@
-// String 타입의 타양한 기능
+// 코드 3-7 String 타입의 타양한 기능
 
 // 연산자를 통한 문자열 결합
 var hello: String = "Hello"

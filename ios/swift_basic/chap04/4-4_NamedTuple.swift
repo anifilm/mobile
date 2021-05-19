@@ -1,4 +1,4 @@
-// 튜플 요소 이름 지정
+// 코드 4-4 튜플 요소 이름 지정
 
 // String, Int, Double 타입을 갖는 튜플
 var person: (name: String, age: Int, height: Double) = ("anifilm", 100, 172.5)

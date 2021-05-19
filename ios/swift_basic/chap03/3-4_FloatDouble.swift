@@ -1,4 +1,4 @@
-// Float과 Double
+// 코드 3-4 Float과 Double
 var floatValue: Float = 1234567890.1  // Flaot이 수용할 수 있는 범위를 넘어서게 되면 정확도가 떨어진다.
 let doubleValue: Double = 1234567890.1  // Double은 충분히 수용할 수 있다.
 

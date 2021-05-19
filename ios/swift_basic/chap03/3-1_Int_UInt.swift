@@ -1,4 +1,4 @@
-// Int와 UInt (64비트 운영체제에서는 Int64, UInt64 이다.)
+// 코드 3-1 Int와 UInt (64비트 운영체제에서는 Int64, UInt64 이다.)
 var integer: Int = -100
 let unsignedInteger: UInt = 50  // UInt 타입에는 음수값을 할당할 수 없다.
 print("integer 값: \(integer), unsignedInteger 값: \(unsignedInteger)")

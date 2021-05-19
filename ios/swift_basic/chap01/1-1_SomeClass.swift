@@ -1,4 +1,4 @@
-// 스위프트에서 객체지향 프로그래밍 패러다임의 사용
+// 코드 1-1 스위프트에서 객체지향 프로그래밍 패러다임의 사용
 class SomeClass {
     var someProperty: Any = 1
     func someMethod() {

@@ -1,4 +1,4 @@
-// String
+// 코드 3-6 String
 let name: String = "anifilm"  // 상수로 선언된 문자열은 변경할 수 없다.
 
 // 이니셜라이저를 사용하여 빈 문자열을 생성할 수 있다.

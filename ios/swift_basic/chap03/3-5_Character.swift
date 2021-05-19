@@ -1,4 +1,4 @@
-// Character
+// 코드 3-5 Character
 let alphabetA: Character = "A"
 print(alphabetA)
 

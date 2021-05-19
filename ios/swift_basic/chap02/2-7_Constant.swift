@@ -1,4 +1,4 @@
-// 상수의 선언 및 사용
+// 코드 2-7 상수의 선언 및 사용
 let name: String = "aniiflm"  // 차후 변경하지 않는 값은 상수로 선언
 var age: Int = 100
 var job = "iOS Programmer"  // 타입 추론 사용

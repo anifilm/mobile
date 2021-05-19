@@ -1,4 +1,4 @@
-// 타입 별칭
+// 코드 4-2 타입 별칭
 typealias MyInt = Int
 typealias YourInt = Int
 typealias MyDouble = Double

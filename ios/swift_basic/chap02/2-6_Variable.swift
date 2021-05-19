@@ -1,4 +1,4 @@
-// 변수 선언 및 사용
+// 코드 2-6 변수 선언 및 사용
 var name: String = "anifilm"
 var age: Int = 100
 var job = "iOS Programmer"  // 타입 추론 사용
