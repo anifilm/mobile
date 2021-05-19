@@ -4,34 +4,34 @@
 var hello: String = "Hello"
 let yagom: String = "yagom"
 var greeting: String = hello + " " + yagom + "!"
-print(greeting)  // "Hello yagom!"
+print(greeting) // "Hello yagom!"
 
 greeting = hello
 greeting += " "
 greeting += yagom
 greeting += "!"
-print(greeting)  // "Hello yagom!"
+print(greeting) // "Hello yagom!"
 
 // 연산자를 통한 문자열 비교
 var isSameString: Bool = false
 
 isSameString = hello == "Hello"
-print(isSameString)  // true
+print(isSameString) // true
 
 isSameString = hello == "hello"
-print(isSameString)  // false
+print(isSameString) // false
 
 // 메서드를 통한 접두어, 접미어 확인
 var isHasPrefix: Bool = false
 isHasPrefix = hello.hasPrefix("He")
-print(isHasPrefix)  // true
+print(isHasPrefix) // true
 
 isHasPrefix = hello.hasPrefix("HE")
-print(isHasPrefix)  // false
+print(isHasPrefix) // false
 
 var hasSuffix: Bool = false
 hasSuffix = hello.hasSuffix("He")
-print(hasSuffix)  // false
+print(hasSuffix) // false
 
 hasSuffix = hello.hasSuffix("llo")
 print(hasSuffix)  // true

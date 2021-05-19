@@ -18,7 +18,6 @@ func excuteAll() {
 
 excuteAll()
 
-
 // 두 수의 합을 구하고 싶은 경우
 
 // 명령형 프로그래밍 패러다임

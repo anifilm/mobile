@@ -1,4 +1,5 @@
 // 코드 1-1 스위프트에서 객체지향 프로그래밍 패러다임의 사용
+
 class SomeClass {
     var someProperty: Any = 1
     func someMethod() {
@@ -14,4 +15,4 @@ let myInstance: SomeClass = SomeClass()
 myInstance.someProperty = 100  // 인스턴스의 프로퍼티에 값을 할당할 수도 있고
 print(myInstance.someProperty) // 값을 가져올 수도 있습니다.
 
-myInstance.someMethod()  // 인스턴스의 메서드를 호출하여 작업을 수행하도록 할 수 있습니다.
+myInstance.someMethod() // 인스턴스의 메서드를 호출하여 작업을 수행하도록 할 수 있습니다.
