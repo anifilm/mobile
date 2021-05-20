@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>화살표 함수 실습하기</title>
+</head>
+<body>
+  <button onclick="
+    console.log(fnSayHello());
+    console.log('1 + 2 =', fnPlusNumbers1(1, 2));
+    console.log('2 + 3 =', fnPlusNumbers2(2, 3));
+    console.log('3 + 4 =', fnPlusNumbers3(3, 4));
+    console.log('4 + 1 =', fnPlusNumbers4(4));
+  " id="clickme">화살표 함수 실행!</button>
+
+  <script>
+    const fnPlusNumbers1 = function (pNum1, pNum2) {
+      return pNum1 + pNum2;
+    }
+    const fnPlusNumbers2 = (pNum1, pNum2) => {
+      return pNum1 + pNum2;
+    }
+    const fnPlusNumbers3 = (pNum1, pNum2) => pNum1 + pNum2;
+    const fnPlusNumbers4 = pNum => pNum + 1;
+    const fnSayHello = () => '안녕하세요!';
+  </script>
+</body>
+</html>
