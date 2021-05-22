@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text} from 'react-native'
+import { Text } from 'react-native'
 
 export default function App() {
   // console.log('App called')
