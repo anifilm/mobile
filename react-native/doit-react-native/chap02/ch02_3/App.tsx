@@ -1,115 +1,69 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React from 'react'
+import { SafeAreaView, Text, ScrollView } from 'react-native'
 
- import React from 'react';
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,
- } from 'react-native';
+/* src/data 구현 내용 테스트
+import * as D from './src/data'
 
- import {
-   Colors,
-   DebugInstructions,
-   Header,
-   LearnMoreLinks,
-   ReloadInstructions,
- } from 'react-native/Libraries/NewAppScreen';
+const person = D.createRandomPerson()
+export default function App() {
+  return (
+    <SafeAreaView>
+    <Text>{JSON.stringify(person, null, 2)}</Text>
+    </SafeAreaView>
+    )
+  } */
 
- const Section: React.FC<{
-   title: string;
- }> = ({children, title}) => {
-   const isDarkMode = useColorScheme() === 'dark';
-   return (
-     <View style={styles.sectionContainer}>
-       <Text
-         style={[
-           styles.sectionTitle,
-           {
-             color: isDarkMode ? Colors.white : Colors.black,
-           },
-         ]}>
-         {title}
-       </Text>
-       <Text
-         style={[
-           styles.sectionDescription,
-           {
-             color: isDarkMode ? Colors.light : Colors.dark,
-           },
-         ]}>
-         {children}
-       </Text>
-     </View>
-   );
- };
+/* ClassComponent 테스트
+import ClassComponent from './src/screens/ClassComponent'
 
- const App = () => {
-   const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
+  return (
+    <SafeAreaView>
+      <Text>Use ClassComponent</Text>
+      <ClassComponent />
+    </SafeAreaView>
+  )
+} */
 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
+/* ArrowComponent 테스트
+import ArrowComponent from './src/screens/ArrowComponent'
 
-   return (
-     <SafeAreaView style={backgroundStyle}>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <ScrollView
-         contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
-         <Header />
-         <View
-           style={{
-             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-           }}>
-           <Section title="Step One">
-             Edit <Text style={styles.highlight}>App.js</Text> to change this
-             screen and then come back to see your edits.
-           </Section>
-           <Section title="See Your Changes">
-             <ReloadInstructions />
-           </Section>
-           <Section title="Debug">
-             <DebugInstructions />
-           </Section>
-           <Section title="Learn More">
-             Read the docs to discover what to do next:
-           </Section>
-           <LearnMoreLinks />
-         </View>
-       </ScrollView>
-     </SafeAreaView>
-   );
- };
+export default function App() {
+  return (
+    <SafeAreaView>
+      <Text>Use ArrowComponent</Text>
+      <ArrowComponent />
+    </SafeAreaView>
+  )
+} */
 
- const styles = StyleSheet.create({
-   sectionContainer: {
-     marginTop: 32,
-     paddingHorizontal: 24,
-   },
-   sectionTitle: {
-     fontSize: 24,
-     fontWeight: '600',
-   },
-   sectionDescription: {
-     marginTop: 8,
-     fontSize: 18,
-     fontWeight: '400',
-   },
-   highlight: {
-     fontWeight: '700',
-   },
- });
+/* Person 속성 전달
+import Person from './src/screens/Person'
+import * as D from './src/data'
 
- export default App;
+const person = D.createRandomPerson()
+
+export default function App() {
+  return (
+    <SafeAreaView>
+      <Person person={person} />
+    </SafeAreaView>
+  )
+} */
+
+// ScrollView 적용
+import Person from './src/screens/Person'
+import * as D from './src/data'
+
+const people = D.makeArray(100).map(D.createRandomPerson)
+
+export default function App() {
+  const children = people.map((person) => (
+    <Person key={person.id} person={person} />
+  ))
+  return (
+    <SafeAreaView>
+      <ScrollView>{children}</ScrollView>
+    </SafeAreaView>
+  )
+}
