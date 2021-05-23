@@ -15,11 +15,11 @@ class Bird {
 }
 
 fun main() {
-    val coco = Bird()    // 클래스의 생성자를 통한 객체의 생성
-    coco.color = "blue"  // 객체읜 프로퍼티에 값 할당
+    val coco = Bird()   // 클래스의 생성자를 통한 객체의 생성
+    coco.color = "blue" // 객체읜 프로퍼티에 값 할당
 
-    println("coco.color: ${coco.color}")  // 객체의 멤버 프로퍼티 읽기
-    coco.fly()  // 객체의 멤버 메서드 사용
+    println("coco.color: ${coco.color}") // 객체의 멤버 프로퍼티 읽기
+    coco.fly() // 객체의 멤버 메서드 사용
     coco.sing(3)
 }
 

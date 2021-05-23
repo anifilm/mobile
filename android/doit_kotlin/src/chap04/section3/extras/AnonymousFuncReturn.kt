@@ -1,8 +1,7 @@
 package chap04.section3.extras
 
 fun main() {
-    // 익명함수 방법
-    /*
+    /* 익명함수 방법
     val getMessage = fun(num: Int): String {
         if (num !in 1..100) {
             return "Error"

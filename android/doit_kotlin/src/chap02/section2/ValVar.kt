@@ -61,6 +61,7 @@ val은 초기화 후 값을 변경이 불가능한 것이 맞습니다.
   nameArray.add("Java")
   println("nameArray : $nameArray")
 
+
 var (variable, mutable type)
 
 var로 지정된 가변 타입 변수는 초기화 후 값을 변경이 가능합니다.

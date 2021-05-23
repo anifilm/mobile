@@ -3,7 +3,7 @@ package chap04.section1
 
 fun main() {
     print("Enter the score: ")
-    val score = readLine()!!.toDouble()  // 콘솔로부터 입력받음 (아래 내용 참조)
+    val score = readLine()!!.toDouble() // 콘솔로부터 입력받음 (아래 내용 참조)
     var grade: Char = 'F'
 
     // 논리합으로 연결된 조건

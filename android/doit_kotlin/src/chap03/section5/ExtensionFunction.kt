@@ -6,7 +6,6 @@ fun main() {
     val target = "Kotlin"
     println(source.getLongString(target))
 //  "Hello World!".getLongString("Kotlin") 형태로 사용 가능
-
 }
 
 // String 클래스를 확장해 getLongString() 함수 추가

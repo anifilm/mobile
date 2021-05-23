@@ -8,5 +8,6 @@ fun main() {
         var b = "Kotlin"
         println(a + num) // num의 값은 $num
         """
+
     println(formatedString)
 }

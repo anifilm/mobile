@@ -10,7 +10,7 @@ class Parrot(name: String, wing: Int = 2, beak: String, color: String,
     fun speak() = println("Speak! $language")
 
     override fun sing(vol: Int) {
-        super.sing(vol)  // 상위클래스의 sing()을 먼저 수행
+        super.sing(vol) // 상위클래스의 sing()을 먼저 수행
         println("I'm a parrot! The volume level is  $vol")
         speak()
     }
@@ -21,5 +21,5 @@ fun main() {
     parrot.language = "English"
 
     println("Parrot: ${parrot.name}, ${parrot.wing}, ${parrot.beak}, ${parrot.color}, ${parrot.language}")
-    parrot.sing(5)  // 달라진 메서드 실행 가능
+    parrot.sing(5) // 달라진 메서드 실행 가능
 }

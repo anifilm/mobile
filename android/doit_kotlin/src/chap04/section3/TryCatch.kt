@@ -7,7 +7,7 @@ fun main() {
     val c: Int
 
     try {
-        c = a / b  // 예외 발생!
+        c = a / b // 예외 발생!
     } catch (e : Exception) {
         println("Exception is handled.")
     } finally {

@@ -24,7 +24,7 @@ class Bird {
         this.color = "grey"
     }
 
-    // 메서드들
+    // 메서드
     fun fly() = println("Fly wing: $wing")
     fun sing(vol: Int) = println("Sing vol: $vol")
 }

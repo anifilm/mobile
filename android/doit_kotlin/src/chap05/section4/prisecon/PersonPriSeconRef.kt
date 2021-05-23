@@ -2,15 +2,15 @@
 package chap05.section4.prisecon
 
 class Person(firstName: String,
-            out: Unit = println("[Primary Constructor] Parameter")) {  // 주 생성자
-    val fName = println("[Property] Person fName: $firstName")  // 프로퍼티 할당
+            out: Unit = println("[Primary Constructor] Parameter")) { // 주 생성자
+    val fName = println("[Property] Person fName: $firstName") // 프로퍼티 할당
     init {
-        println("[init] Person init block")  // 초기화 블록
+        println("[init] Person init block") // 초기화 블록
     }
     // 부 생성자
     constructor(firstName: String, age: Int,
             out: Unit = println("[Secondary Constructor] Parameter")): this(firstName) {
-        println("[Secondary Constructor] Body: $firstName, $age")  // 부 생성자 본문
+        println("[Secondary Constructor] Body: $firstName, $age") // 부 생성자 본문
     }
 }
 

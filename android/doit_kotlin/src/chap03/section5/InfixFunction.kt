@@ -11,7 +11,7 @@ fun main() {
 }
 
 // Int를 확장해서 multiply() 함수를 하나 더 추가함
-infix fun Int.multiply(x: Int): Int {  // infix로 선언되므로 중위 함수
+infix fun Int.multiply(x: Int): Int { // infix로 선언되므로 중위 함수
     return this * x
 }
 

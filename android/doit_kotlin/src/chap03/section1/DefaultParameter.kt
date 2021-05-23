@@ -10,8 +10,8 @@ fun main() {
     add("정흥규")
     add("정흥규", "dooly@gmail.com")
 
-    defaultArgs()     // 100 + 200
-    defaultArgs(200)  // 200 + 200
+    defaultArgs()    // 100 + 200
+    defaultArgs(200) // 200 + 200
 }
 
 fun add(name: String, email: String = "default@gmail.com") {

@@ -3,7 +3,7 @@ package chap03.section3
 
 fun main() {
     // 매개변수가 2개 있는 람다식
-    moreParam { a, b -> "Hello World! $a $b" }  // 매개변수 이름 생략 불가
+    moreParam { a, b -> "Hello World! $a $b" } // 매개변수 이름 생략 불가
 }
 
 // 매개변수가 2개 있는 람다식의 moreParam() 함수의 매개변수로 지정됨

@@ -7,6 +7,6 @@ fun main() {
 
     println(number1 shr 1)
     println(number1 ushr 1) // 변화 없음
-    println(number2 shr 1)  // 부호비트가 1로 유지
-    println(number2 ushr 1) // 부호비트가 0이 되면서 변경
+    println(number2 shr 1)  // 부호비트 1로 유지
+    println(number2 ushr 1) // 부호비트 0이 되면서 변경
 }

@@ -22,8 +22,8 @@ fun sum(a: Int, b: Int): Int {
     return a + b
 }
 
-fun sum(a: Int, b: Int): Int = a + b  // 중괄호와 return문 생략
+fun sum(a: Int, b: Int): Int = a + b // 중괄호와 return문 생략
 
-fun sum(a: Int, b: Int) = a + b  // 반환값의 자료형 생략
+fun sum(a: Int, b: Int) = a + b      // 반환값의 자료형 생략
 
  */

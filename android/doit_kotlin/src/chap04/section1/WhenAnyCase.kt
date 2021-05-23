@@ -7,7 +7,7 @@ fun main() {
     cases("Hello")   // String
     cases(1)         // Int
     cases(1234L)     // Long
-    cases(System.currentTimeMillis())  // 현재 시간을 Long형 값으로 반환 (밀리초 단위)
+    cases(System.currentTimeMillis()) // 현재 시간을 Long형 값으로 반환 (밀리초 단위)
     cases(MyClass()) // 객체
 }
 
