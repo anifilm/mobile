@@ -1,5 +1,4 @@
-.DS_Store
-.vscode
+.vscode/
 node_modules/
 package-lock.json
 dist/
@@ -8,5 +7,8 @@ out/
 target/
 __using_assets__/
 __new__/
+.env
 *.exe
 *.pdf
+
+.DS_Store
