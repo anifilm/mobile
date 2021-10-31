@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>await 연산자와 async 비동기 함수 실습하기</title>
+  </head>
+  <body>
+    <!-- async 함수를 실행 -->
+    <button onclick="fnDoFunc()">Promise: 상품 배송 시작!</button>
+    <button onclick="fnDoAsyncFunc()">async, await: 상품 배송 시작!</button>
+
+    <script>
+      // 비동기 함수 실행
+      function fnDoFunc() {
+        fnProductReady(1, 2000).then((result) => {
+          console.log(result);
+        });
+        fnProductReady(2, 1000).then((result) => {
+          console.log(result);
+        });
+        fnProductReady(3, 500).then((result) => {
+          console.log(result);
+        });
+      }
+
+      // await로 비동기 함수를 순서대로 실행
+      // Promise보다 소스가 간결하고 가독성이 가장 높음!
+      async function fnDoAsyncFunc() {
+        console.log(await fnProductReady(1, 2000));
+        console.log(await fnProductReady(2, 1000));
+        console.log(await fnProductReady(3, 500));
+      }
+
+      // Promise로 비동기 처리 함수 생성
+      function fnProductReady(pNum, pTime) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log(pNum);
+            resolve('상품이 성공적으로 배송되었습니다.');
+          }, pTime);
+        });
+      }
+    </script>
+  </body>
+</html>
