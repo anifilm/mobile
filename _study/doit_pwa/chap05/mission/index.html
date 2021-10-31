@@ -2,20 +2,42 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>미션코딩 - 카운터 컴포넌트 프로그램 만들기</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
-      <p>{{ message }}</p>
+      <simple-counter startnumber="1"></simple-counter>
+      <simple-counter startnumber="10"></simple-counter>
+      <simple-counter startnumber="100"></simple-counter>
     </div>
 
     <script>
-      new Vue({
-        el: '#app',
-        data: {
-          message: '안녕하세요!'
+      Vue.component('simple-counter', {
+        props: ['startnumber'],
+        template: `
+          <button v-on:click="fnIncCounter">
+            카운터: {{ fnGetCounter }}
+          </button>`,
+        data() {
+          return {
+            nCounter: parseInt(this.startnumber)
+          };
+        },
+        computed: {
+          fnGetCounter() {
+            return this.nCounter;
+          }
+        },
+        methods: {
+          fnIncCounter() {
+            this.nCounter += 1;
+          }
         }
+      });
+
+      new Vue({
+        el: '#app'
       });
     </script>
   </body>
