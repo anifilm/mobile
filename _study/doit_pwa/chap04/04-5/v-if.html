@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>동전 던지기 결과를 확인하는 프로그램 만들기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ bFlag }}</h1>
+      <p v-if="bFlag == true">앞면!</p>
+      <p v-else>뒷면!</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          bFlag: Math.random() > 0.5
+        }
+      });
+    </script>
+  </body>
+</html>

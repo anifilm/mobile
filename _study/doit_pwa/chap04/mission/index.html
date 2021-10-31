@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>미션코딩 - v-for 디렉티브로 고객 정보 출력하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="(person, index) in aPersons">
+          <p>번호: {{ index }}</p>
+          <p>이름: {{ person.name }}</p>
+          <p>나이: {{ person.age }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          aPersons: [
+            {
+              name: '홍길동',
+              age: 27
+            },
+            {
+              name: '이순신',
+              age: 30
+            },
+            {
+              name: '김유신',
+              age: 40
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

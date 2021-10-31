@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>올해 연도를 자동으로 표기하는 프로그램 만들기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .blue_style {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-bind:class="sColorName + '_style'">안녕하세요!</h1>
+      <input type="text" v-bind:value="sDate">
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          sDate: `올해 연도: ${new Date().getFullYear()}`,
+          sColorName: 'blue'
+        }
+      });
+    </script>
+  </body>
+</html>

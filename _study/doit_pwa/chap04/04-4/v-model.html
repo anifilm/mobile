@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>데이터를 실시간으로 동기화하는 프로그램 만들기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <input type="text" v-model:value="message">
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: '안녕하세요!'
+        }
+      });
+    </script>
+  </body>
+</html>
