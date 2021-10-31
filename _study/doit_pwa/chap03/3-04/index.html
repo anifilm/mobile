@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- PWA 매니페스트 파일 연결, 상태 표시줄 색상을 흰색으로 변경 -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- 모바일 기기 뷰포트, 브라우저 주소 표시줄의 파비콘 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="icon" type="image/png" size="16x16" href="images/icons/favicon-16x16.ico">
+    <link rel="icon" type="image/png" size="32x32" href="images/icons/favicon-32x32.ico">
+
+    <title>안녕하세요! PWA by JS</title>
+    <style>
+      html, body {
+        height: 100%;
+        background-color: #f3a530;
+        color: #ffffff;
+      }
+      .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        margin-left: 15px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>안녕하세요!</h1>
+      <img src="./images/hello-pwa.png" alt="">
+      <p>by JS</p>
+
+      <!-- 서비스 워커 등록 -->
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+          .register('./service_worker.js')
+          .then(() => {
+            console.log('서비스 워커가 등록됨!');
+          });
+        }
+      </script>
+    </div>
+  </body>
+</html>
