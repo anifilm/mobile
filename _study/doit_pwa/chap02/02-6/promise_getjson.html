@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>원격에서 정보를 Promise로 받기</title>
+  </head>
+  <body>
+    <button onclick="
+      // JSON 로컬 텍스트 표시
+      fetch('./data.json')
+        .then(pResponse => pResponse.text())
+        .then(pJSON => console.log(pJSON));
+    ">JSON 로컬 읽기</button>
+    <button onclick="
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then(pResponse => pResponse.text())
+        .then(pJSON => console.log(pJSON));
+      // JSON 원격 텍스트 표시
+    ">JSON 원격 읽기</button>
+  </body>
+</html>

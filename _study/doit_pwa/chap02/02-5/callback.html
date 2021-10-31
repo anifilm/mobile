@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>콜백 함수의 비동기 처리 방식으로 상품 배송 서비스 구현하기</title>
+  </head>
+  <body>
+    <button onclick="
+      // 콜백 함수를 순서대로 실행하면 콜백 지옥의 문제점 발생!
+      fnProductReady(1, 2000, function (pRet) {
+        console.log(pRet);
+        fnProductReady(2, 1000, function (pRet) {
+          console.log(pRet);
+          fnProductReady(3, 500, function (pRet) {
+            console.log(pRet);
+            console.log('가독성이 낮고 유지 보수하기 어려운 콜백 지옥 발생!');
+          })
+        })
+      })
+    ">콜백 함수 순서대로 실행!</button>
+    <button onclick="
+      fnProductReady(1, 2000, function (pRet) {
+        console.log(pRet);
+      })
+      fnProductReady(2, 1000, function (pRet) {
+        console.log(pRet);
+      })
+      fnProductReady(3, 500, function (pRet) {
+        console.log(pRet);
+        console.log('콜백 함수는 실행 순서를 보장하지 않는다.');
+      })
+    ">콜백 함수 비동기 실행!</button>
+
+    <script>
+      // 콜백 함수 생성
+      function fnProductReady(pNum, pTime, fnCallback) {
+        setTimeout(() => {
+          console.log(pNum);
+          fnCallback('상품이 성공적으로 배송되었습니다.');
+        }, pTime); // 타이머로 가상의 네트워트 지연 상황 연출
+      }
+    </script>
+  </body>
+</html>

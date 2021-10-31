@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>함수 선언식과 표현식 실습하기</title>
+  </head>
+  <body>
+    <button onclick="console.log(fnSayHello())" id="clickme">
+      눌러 주세요!
+    </button>
+    <br>
+    <button onclick="alert(fnPlusNumbers(3, 5))">3 + 5 = ?</button>
+    <br>
+    <button onclick="console.log(fnMinusNumbers(3, 5))">3 - 5 = ?</button>
+
+    <script>
+      function fnSayHello() {
+        document.querySelector('#clickme').innerHTML = '안녕하세요!';
+      }
+      function fnPlusNumbers(pNum1, pNum2) {
+        return pNum1 + pNum2;
+      }
+      const fnMinusNumbers = function (pNum1, pNum2) {
+        return pNum1 - pNum2;
+      };
+    </script>
+  </body>
+</html>
