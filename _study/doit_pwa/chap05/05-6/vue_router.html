@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>메인과 서브 페이지를 오가는 SPA 만들기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>안녕하세요!</h1>
+      <!-- 현재 라우터 위치의 컴포넌트를 렌더링 -->
+      <router-view></router-view>
+      <hr>
+      <p>
+        라우터 사용:
+        <!-- to 속성에 이동할 링크 지정 -->
+        <router-link to="/main">메인 페이지 이동</router-link>
+        <router-link to="/sub">서브 페이지 이동</router-link>
+      </p>
+    </div>
+
+    <script>
+      // 라우터에 등록할 컴포넌트 정의
+      const tmMain = {
+        template: '<h2>메인 페이지입니다.</h2>'
+      }
+      const tmSub = {
+        template: '<h2>서브 페이지입니다.</h2>'
+      }
+      // 이동할 주소명과 사용할 컴포넌트를 등록하여 라우터 정의
+      const rtRoutes = [
+        {
+          path: '/main',
+          component: tmMain
+        },
+        {
+          path: '/sub',
+          component: tmSub
+        }
+      ];
+
+      const router = new VueRouter({
+        routes: rtRoutes
+      });
+
+      new Vue({
+        el: '#app',
+        router
+      });
+    </script>
+  </body>
+</html>

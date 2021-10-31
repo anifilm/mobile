@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>카운트다운 프로그램 만들기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>클릭 숫자: {{ nClicks }}</p>
+      <p>카운트다운: {{ fnCounter }}</p>
+      <button v-on:click="fnIncrement">눌러주세요!</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          nClicks: 0,
+          nCountdown: 10
+        },
+        // computed는 머스태시 안의 로직이 복잡할 때 사용
+        computed: {
+          fnCounter() {
+            // nClicks값이 10을 기준으로 카운트다운되도록 1만큼 감소시킴
+            if (this.nCountdown - this.nClicks < 0) {
+              this.nCountdown += 10;
+            }
+            return this.nCountdown - this.nClicks;
+          }
+        },
+        // 메서드는 이벤트 핸들러 로직을 실행할 때 사용
+        methods: {
+          // nClicks값을 1만큼 증가시킴
+          fnIncrement() {
+            this.nClicks += 1;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

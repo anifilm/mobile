@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>컴포넌트 속성을 활용해 좋아하는 과일 나열하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>좋아하는 과일!</h1>
+      <ol>
+        <favorite-fruits v-for="fruit in aFruits" v-bind:fruit="fruit" v-bind:key="fruit.id"></favorite-fruits>
+      </ol>
+    </div>
+
+    <script>
+      Vue.component('favorite-fruits', {
+        props: ['fruit'],
+        template: '<li>{{ fruit.text }}</li>'
+      });
+
+      new Vue({
+        el: '#app',
+        data: {
+          // 컴포넌트에 표시할 과일 데이터 정의
+          aFruits: [
+              {
+                id: 0,
+                text: '사과'
+              },
+              {
+                id: 1,
+                text: '오렌지'
+              },
+              {
+                id: 2,
+                text: '수박'
+              }
+            ]
+        }
+      });
+    </script>
+  </body>
+</html>

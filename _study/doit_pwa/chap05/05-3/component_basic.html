@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>좋아하는 과일 나열하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .fruit_style {
+        border: 1px solid #ccc;
+        background-color: white;
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ sTitle }}</h1>
+      <!-- 신규 컴포넌트 엘리먼트 2개 사용 -->
+      <favorite-fruits></favorite-fruits>
+      <favorite-fruits></favorite-fruits>
+    </div>
+
+    <script>
+      // 좋아하는 과일 3개를 표시하는 컴포넌트 정의
+      Vue.component('favorite-fruits', {
+        data() {
+          return {
+            aFruits: [
+              {
+                sFruit_name: '사과'
+              },
+              {
+                sFruit_name: '오렌지'
+              },
+              {
+                sFruit_name: '수박'
+              }
+            ]
+          }
+        },
+        // 컴포넌트 템플릿은 화면에 표시할 엘리먼트 구조 정의
+        template: `
+          <div>
+            <div v-for="item in aFruits" class="fruit_style">
+              <p>좋아하는 과일: {{ item.sFruit_name }}</p>
+            </div>
+            <br>
+          </div>`
+      });
+
+      new Vue({
+        el: '#app',
+        data: {
+          sTitle: '안녕하세요!'
+        }
+      });
+    </script>
+  </body>
+</html>
