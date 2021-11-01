@@ -1,36 +1,53 @@
 <template>
-  <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
+	<v-app>
+		<!-- 툴바에 제목, 버튼을 삽입 -->
+		<v-app-bar color="blue-grey" dark app>
+			<v-app-bar-nav-icon></v-app-bar-nav-icon>
+			<v-toolbar-title>사진 갤러리</v-toolbar-title>
+			<v-spacer></v-spacer>
+			<v-btn icon>
+				<v-icon>more_vert</v-icon>
+			</v-btn>
+		</v-app-bar>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+		<v-content>
+			<!-- 카드 그리드 사이에 여백 설정-->
+			<v-container>
+				<v-row class="my-3">
+					<!-- 기기별로 그리드의 크기 설정-->
+					<v-col cols="12" sm="6" md="4" lg="3" xl="2" v-for="item in this.aPictures" v-bind:key="item.key">
+						<!-- 카드 UI에 사진 담아내기-->
+						<v-card height="330px">
+							<v-img v-bind:src="item.url" height="200px">
+							</v-img>
+							<v-card-title>
+								<h1 class="title grey--text text--darken-3 mb-3">{{item.title}}</h1>
+								<p class="body-2 grey--text">{{item.info}}</p>
+							</v-card-title>
+						</v-card>
+					</v-col>
+				</v-row>
+			</v-container>
+		</v-content>
+
+		<!-- 바닥글 고정 -->
+		<v-footer app>
+			<div class="mx-auto">&copy; CODE-DESIGN.web.app</div>
+		</v-footer>
+	</v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+// 사진 정보(JSON 파일) 읽어오기
+import oPictureData from '@/datasources/picture-data';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      // aPictures의 배열에 사진 정보 저장하기
+      aPictures: oPictureData.aPictures
+    };
   },
-  data: () => ({
-    //
-  }),
+  name: 'App'
 };
 </script>
