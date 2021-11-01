@@ -12,7 +12,7 @@
     </v-row>
     <div class="text-center my-3">
       <!-- 카메라 캡처 버튼을 영상 하단 중앙에 위치 -->
-      <v-btn v-if="!this.bIsWait" color="red" fab dark bottom v-on:click="fnCameraCapture()">
+      <v-btn v-if="!this.bIsWait" color="pink" fab dark bottom v-on:click="fnCameraCapture()">
         <v-icon>camera</v-icon>
       </v-btn>
       <v-progress-circular v-if="this.bIsWait" v-bind:size="50" indeterminate color="grey"></v-progress-circular>
