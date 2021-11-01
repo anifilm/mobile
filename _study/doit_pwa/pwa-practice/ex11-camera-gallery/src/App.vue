@@ -1,36 +1,29 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
+    <v-app-bar app color="pink lighten-1" dark fixed>
+      <!-- 홈 화면이 아닌 경우 돌아가기 버튼 표시 -->
+      <v-btn icon v-if="$route.name !== 'home_page'" @click="$router.go(-1)">
+        <v-icon>arrow_back</v-icon>
+      </v-btn>
+      <v-toolbar-title>카메라 갤러리</v-toolbar-title>
       <v-spacer></v-spacer>
+      <!-- 홈 화면에서만 촬영아이콘 표시-->
       <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        icon
+        v-if="$route.name == 'home_page'"
+        @click="$router.push('/camera')"
       >
-        <span class="mr-2">Latest Release</span>
+        <v-icon>camera_alt</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-  },
-  data: () => ({
-    //
-  }),
+  name: 'App'
 };
 </script>
