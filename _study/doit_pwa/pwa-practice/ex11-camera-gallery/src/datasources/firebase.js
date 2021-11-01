@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/firebase-database';
 import 'firebase/storage';
 
-// 파이어베이스 DB를 초기화하고 연결
+// 파이어베이스 DB를 초기화
 const oFirebase = firebase.initializeApp({
   // 파이어베이스 콘솔에서 복사하여 붙여넣기
   databaseURL: process.env.VUE_APP_DATABASE_URL,
