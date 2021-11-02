@@ -50,9 +50,10 @@ const router = new VueRouter({
 });
 
 // 라우터 이동에 개입하여 인증이 필요한 경우 login 페이지로 전환
+// TODO: history의 영향인지 미묘하게 오작동하는 느낌이 든다.
 router.beforeEach((to, from, next) => {
   const bNeedAuth = to.matched.some((record) => record.meta.bAuth);
-  const bCheckAuth = firebase.auth().currentUser;
+  const bCheckAuth = firebase.auth().currentUser
   if (bNeedAuth && !bCheckAuth) {
     next('/login');
   } else {

@@ -88,9 +88,9 @@ export default {
             email: pUserInfo.email,
             photoURL: pUserInfo.photoURL
           })
-          commit('fnSetLoading', false) // 시간 걸림 상태 해제
-          commit('fnSetErrorMessage', '') // 에러 메세지 초기화
-          router.push('/main') // 로그인 후 화면으로 이동
+          commit('fnSetLoading', false);   // 시간 걸림 상태 해제
+          commit('fnSetErrorMessage', ''); // 에러 메세지 초기화
+          router.push('/main'); // 로그인 후 화면으로 이동
         })
         .catch((err) => {
           commit('fnSetErrorMessage', err.message)
@@ -106,7 +106,7 @@ export default {
         email: pUserInfo.email,
         photoURL: pUserInfo.photoURL
       });
-      commit('fnSetLoading', false); // 시간 걸림 상태 해제
+      commit('fnSetLoading', false);   // 시간 걸림 상태 해제
       commit('fnSetErrorMessage', ''); // 에러 메세지 초기화
     },
     // 로그아웃 처리
