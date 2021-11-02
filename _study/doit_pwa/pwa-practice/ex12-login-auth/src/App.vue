@@ -1,60 +1,105 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <!--
+      반응형 중단점이 데스크톱(lg) 이상일 때 탐색 서랍이 툴바 아래에 표시되도록 함
+      app속성은 반드시 설정해야 함
+      v-app엘리먼트 안의 내용이 적절히 표시되도로 도움
+    -->
+    <v-navigation-drawer clipped v-model="drawer" app>
+      <v-list>
+        <!-- items 배열을 읽어와서 차례로 메뉴로 바인딩 하여 표시함 -->
+        <v-list-item value="true" v-for="(item, index) in fnGetMenuItems" v-bind:to="item.to" v-bind:key="index">
+          <v-list-item-action>
+            <!-- html 엘리먼트의 값으로 바인딩할 때는 v-html 디렉티브 사용 -->
+            <v-icon v-html="item.icon"></v-icon>
+          </v-list-item-action>
+          <v-list-item-title v-text="item.title"></v-list-item-title>
+        </v-list-item>
+        <!-- 로그인 된 경우만 로그아웃 버튼을 표시함 -->
+        <v-list-item v-on:click="fnDoLogout" v-if="fnGetAuthStatus">
+          <v-list-item-action>
+            <v-icon>mdi-arrow-right-bold-box-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-title>로그아웃</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <!-- 탑색서랍이 툴바 아래에 위치할 때 메뉴 아이콘이 적절히 좌측에 배치되도록 app과 clipped-left 어트리뷰트 지정 -->
+    <v-app-bar app clipped-left color="primary" dark>
+      <!-- 햄버거 아이콘은 반응형 크기가 sm 이상일 때 숨김 -->
+      <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer" class="hidden-sm-and-up"></v-app-bar-nav-icon>
+      <router-link to="/" style="cursor: pointer">
+        <!-- 머티리얼 디자인 아이콘 사용시 아이콘 이름에 'mid-' 붙임 -->
+        <!-- 홈로고 아이콘은 반응형 크기가 xs일 때 숨김 -->
+        <v-icon class="hidden-xs-only" large color="teal lighten-4">mdi-home</v-icon>{' '}
+      </router-link>
+      <v-toolbar-title class="headline">이메일 | 구글 인증 로그인</v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <!-- 툴바의 메뉴명을 표시할 때 xs일 때는 숨기고 나머지 크기에는 보이게
+				함 -->
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn text v-for="item in fnGetMenuItems" v-bind:key="item.title" v-bind:to="item.to">
+          <v-icon left>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+        <!-- 로그인 된 경우만 로그아웃 버튼을 메뉴에 표시함 -->
+        <v-btn text v-on:click="fnDoLogout" v-if="fnGetAuthStatus">
+          <v-icon left>mdi-arrow-right-bold-box-outline</v-icon>
+          로그아웃
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
+
+    <v-footer app>
+      <div class="mx-auto">&copy; CODE-DESIGN.web.app</div>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      drawer: false
+    };
   },
-
-  data: () => ({
-    //
-  }),
+  computed: {
+    // 스토어에서 현재 인증 상태인지 반환
+    fnGetAuthStatus() {
+      return this.$store.getters.fnGetAuthStatus;
+    },
+    // 로그인 여부에 따라 다르게 탐색 서랍과 툴바 메뉴명 항목 배열 반환
+    fnGetMenuItems() {
+      if (!this.fnGetAuthStatus) {
+        return [
+          {
+            title: '회원가입',
+            to: '/register',
+            icon: 'mdi-lock-open-outline'
+          }
+        ];
+      } else {
+        return [
+          {
+            title: '메인 페이지',
+            to: '/main',
+            icon: 'mdi-account'
+          }
+        ];
+      }
+    }
+  },
+  // 스토어의 로그아웃 기능사용
+  methods: {
+    fnDoLogout() {
+      this.$store.dispatch('fnDoLogout');
+    }
+  },
+  name: 'App'
 };
 </script>
